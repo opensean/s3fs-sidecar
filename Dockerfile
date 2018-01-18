@@ -1,5 +1,6 @@
-FROM fedora:26
+FROM fedora:27
 LABEL maintainer "Sean Landry, sean.d.landry@gmail.com, https://github.com/opensean"
+
 LABEL s3fs-sidecar.version="0.1.0" \
       s3fs-sidecar.description="Use s3 as backend for a kubernetes deployment by running as sidecar"
 

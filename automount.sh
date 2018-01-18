@@ -7,5 +7,7 @@
 
 echo $AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY > /mnt_s0.cred 
 chmod 600 /mnt_s0.cred
-s3fs $S3_BUCKET $MNT_POINT -o passwd_file=/mnt_s0.cred -o allow_other -f
+
+# need to add kms options
+s3fs $S3_BUCKET $MNT_POINT -o passwd_file=/mnt_s0.cred -o allow_root -f
 
