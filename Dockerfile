@@ -20,5 +20,7 @@ RUN make install
 WORKDIR /
 RUN rm -rf s3fs-fuse
 RUN mkdir data
+RUN mkdir s3fs_perm
+RUN chmod 777 s3fs_perm
 COPY automount.sh automount.sh
 CMD ["./automount.sh"]
