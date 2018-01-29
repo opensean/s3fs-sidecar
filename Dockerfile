@@ -23,5 +23,6 @@ RUN mkdir data
 RUN mkdir s3fs_perm
 RUN chmod 777 s3fs_perm
 RUN chmod 777 data
+RUN cat /etc/fuse.conf | sed 's/# user_allow_other/user_allow_other/' > /etc/fuse_temp.conf && mv /etc/fuse_temp.conf /etc/fuse.conf
 COPY automount.sh automount.sh
 CMD ["./automount.sh"]
